@@ -1,1 +1,43 @@
-<p>single-machine works!</p>
+<mat-card>
+    <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title> {{machine.name}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-card-subtitle> {{machine.dateTimeFrom}}  to:  {{machine.dateTimeTo}} </mat-card-subtitle>
+              <p><strong>Core temp: <span [ngStyle]="{'color': machine.core.color}">{{ machine.core.status}} </span></strong> </p>
+              <p><strong>Total net production: </strong>{{machine.totalNetProduction.toFixed()}} </p>
+              <p><strong>Gross production: </strong>{{machine.productedQuantity}} </p>
+              <p><strong>Bad pieces: </strong>{{machine.scrapQuantity.toFixed()}} ({{machine.scrapPercentage.toFixed(2)}} %) </p>
+              <p><strong>Downtime: </strong>{{machine.downTimePercentage.toFixed(2)}} %</p>
+              <p><strong>Efficiency: </strong>{{machine.oee.toFixed(2)*100}} %</p>
+              <button *ngIf="showContent" (click)="toggleContent()" mat-button color="primary">hide hourly production rate</button>
+              <button *ngIf="!showContent" (click)="toggleContent()" mat-button color="primary">show hourly production rate</button>
+              <mat-card-content *ngIf="showContent">
+                <p><strong>0:00-1:00: </strong>{{machine.hourlyProduction.h0}} pcs</p>
+                <p><strong>1:00-2:00: </strong>{{machine.hourlyProduction.h1}} pcs</p>
+                <p><strong>2:00-3:00: </strong>{{machine.hourlyProduction.h2}} pcs</p>
+                <p><strong>3:00-4:00: </strong>{{machine.hourlyProduction.h3}} pcs</p>
+                <p><strong>4:00-5:00: </strong>{{machine.hourlyProduction.h4}} pcs</p>
+                <p><strong>5:00-6:00: </strong>{{machine.hourlyProduction.h5}} pcs</p>
+                <p><strong>6:00-7:00: </strong>{{machine.hourlyProduction.h6}} pcs</p>
+                <p><strong>7:00-8:00: </strong>{{machine.hourlyProduction.h7}} pcs</p>
+                <p><strong>8:00-9:00: </strong>{{machine.hourlyProduction.h8}} pcs</p>
+                <p><strong>9:00-10:00: </strong>{{machine.hourlyProduction.h9}} pcs</p>
+                <p><strong>10:00-11:00: </strong>{{machine.hourlyProduction.h10}} pcs</p>
+                <p><strong>11:00-12:00: </strong>{{machine.hourlyProduction.h11}} pcs</p>
+                <p><strong>12:00-13:00: </strong>{{machine.hourlyProduction.h12}} pcs</p>
+                <p><strong>13:00-14:00: </strong>{{machine.hourlyProduction.h13}} pcs</p>
+                <p><strong>14:00-15:00: </strong>{{machine.hourlyProduction.h14}} pcs</p>
+                <p><strong>15:00-16:00: </strong>{{machine.hourlyProduction.h15}} pcs</p>
+                <p><strong>16:00-17:00: </strong>{{machine.hourlyProduction.h16}} pcs</p>
+                <p><strong>17:00-18:00: </strong>{{machine.hourlyProduction.h17}} pcs</p>
+                <p><strong>18:00-19:00: </strong>{{machine.hourlyProduction.h18}} pcs</p>
+                <p><strong>19:00-20:00: </strong>{{machine.hourlyProduction.h19}} pcs</p>
+                <p><strong>20:00-21:00: </strong>{{machine.hourlyProduction.h20}} pcs</p>
+                <p><strong>21:00-22:00: </strong>{{machine.hourlyProduction.h21}} pcs</p>
+                <p><strong>22:00-23:00: </strong>{{machine.hourlyProduction.h22}} pcs</p>
+                <p><strong>23:00-24:00: </strong>{{machine.hourlyProduction.h23}} pcs</p>
+              </mat-card-content>
+              </mat-card-content>
+            </mat-card>

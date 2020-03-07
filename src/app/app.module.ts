@@ -16,6 +16,24 @@ import { GraphsComponent } from './graphs/graphs.component';
 import { SingleMachineComponent } from './machine-data-view/single-machine/single-machine.component';
 import { ProductionDataChartComponent } from './graphs/production-data-chart/production-data-chart.component';
 import { DoughnutChartComponent } from './graphs/doughnut-chart/doughnut-chart.component';
+import { ProductionDataService } from './production-data-service/production-data.service';
+import { RouterModule, Routes } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {ChartsModule} from 'ng2-charts';
+
+
+const appRoutes: Routes = [
+  { path: 'machine-data-view', component: MachineDataViewComponent },
+  { path: 'graphs',      component: GraphsComponent },
+  { path: '',      component: MachineDataViewComponent},
+  // { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
   declarations: [
@@ -36,9 +54,21 @@ import { DoughnutChartComponent } from './graphs/doughnut-chart/doughnut-chart.c
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatTreeModule,
+    MatProgressSpinnerModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    FlexLayoutModule,
+    ChartsModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
-  providers: [],
+  providers: [ProductionDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

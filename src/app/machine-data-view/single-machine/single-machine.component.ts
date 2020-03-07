@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-single-machine',
   templateUrl: './single-machine.component.html',
   styleUrls: ['./single-machine.component.scss']
 })
-export class SingleMachineComponent implements OnInit {
+export class SingleMachineComponent {
 
-  constructor() { }
+  @Input() machine;
 
-  ngOnInit(): void {
+showContent = false;
+
+constructor() { }
+
+toggleContent = () => {
+  this.showContent = !this.showContent;
   }
 
 }
+
