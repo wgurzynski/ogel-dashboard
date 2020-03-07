@@ -31,7 +31,7 @@ import {ChartsModule} from 'ng2-charts';
 const appRoutes: Routes = [
   { path: 'machine-data-view', component: MachineDataViewComponent },
   { path: 'graphs',      component: GraphsComponent },
-  { path: '',      component: MachineDataViewComponent},
+  { path: '**',      component: MachineDataViewComponent},
   // { path: '**', component: PageNotFoundComponent }
 ];
 

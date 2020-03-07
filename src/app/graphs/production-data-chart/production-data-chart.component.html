@@ -3,8 +3,8 @@
         <div id="charts" *ngIf="contentLoaded">
             <div style="display: block">
                     <h1> Daily production</h1>
-                <canvas baseChart *ngIf="newChartArray2.length > 0"
-                [datasets]="newChartArray2"
+                <canvas baseChart *ngIf="chartData.length > 0"
+                [datasets]="chartData"
                 [labels]="barChartLabels"
                 [options]="barChartOptions"
                 [legend]="barChartLegend"

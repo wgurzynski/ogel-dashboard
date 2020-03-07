@@ -3,7 +3,7 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar>Dashboard</mat-toolbar>
     <mat-nav-list>
         <a mat-list-item routerLink="/machine-data-view" routerLinkActive="active">Machine's Data</a>
         <a mat-list-item routerLink="/graphs" routerLinkActive="active">Production Graphs</a>
@@ -17,7 +17,7 @@
         mat-icon-button
         (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">Ogel pet company</mat-icon>
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>Admin Ogel-Dashboard</span>
     </mat-toolbar>
