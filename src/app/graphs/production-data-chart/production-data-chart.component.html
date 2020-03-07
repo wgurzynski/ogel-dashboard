@@ -1,1 +1,19 @@
-<p>production-data-chart works!</p>
+<div id="wraper" fxLayout="row" fxLayoutAlign="space-evenly start">
+        <mat-spinner *ngIf="!contentLoaded"></mat-spinner>
+        <div id="charts" *ngIf="contentLoaded">
+            <div style="display: block">
+                    <h1> Daily production</h1>
+                <canvas baseChart *ngIf="newChartArray2.length > 0"
+                [datasets]="newChartArray2"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"></canvas>
+                <h1> Overall Equipment Efficiency</h1>
+                <div fxLayout="row" fxLayoutAlign="space-evenly start">
+                    <app-doughnut-chart *ngFor="let machine of machinesData"
+                    [machine]="machine"></app-doughnut-chart>
+                </div>
+            </div>
+        </div>
+    </div>

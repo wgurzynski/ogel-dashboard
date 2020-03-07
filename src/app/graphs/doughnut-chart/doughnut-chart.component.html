@@ -1,1 +1,13 @@
-<p>doughnut-chart works!</p>
+<mat-card>
+        <mat-card-header  fxLayout="row" fxLayoutAlign="space-evenly center">
+                  <mat-card-title class="small"> {{machine.name}}</mat-card-title>
+                  <mat-card-title> Efficiency {{  efficiencyPercentage }} %</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <canvas baseChart
+                      [data]="doughnutChartData"
+                      [labels]="doughnutChartLabels"
+                      [chartType]="doughnutChartType">
+                    </canvas>
+                  </mat-card-content>
+                </mat-card>

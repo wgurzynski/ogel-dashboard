@@ -8,14 +8,14 @@ import { forkJoin } from '../../../node_modules/rxjs';
 })
 export class ProductionDataService {
   machinesData: any;
-  subscribe(arg0: any): any {
-    throw new Error("Method not implemented.");
-  }
 
   constructor(private http: HttpClient) { }
 
+  // tslint:disable-next-line:member-ordering
   productionDataApiUrl = 'https://www.marviq.com/assessment/index.php?page=a&from=2018-01-07%2000:00:00';
+  // tslint:disable-next-line:member-ordering
   machineTempApiUrl = 'https://www.marviq.com/assessment/index.php?page=b&from=2018-01-07%2000:00:00';
+  // tslint:disable-next-line:member-ordering
   oeeApiUrl = 'https://www.marviq.com/assessment/index.php?page=c&from=2018-01-07%2000:00:00';
 
   fetchCoresAndMachinesData = () => {

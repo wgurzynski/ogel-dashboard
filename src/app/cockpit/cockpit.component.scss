@@ -1,3 +1,6 @@
+*{
+  font-family: 'Spartan';
+}
 .sidenav-container {
   height: 100%;
 }
@@ -14,4 +17,9 @@
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+#companyLabel {
+  font-size:1.3rem;
+  text-align: center;
 }

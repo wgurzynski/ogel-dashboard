@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-doughnut-chart',
@@ -7,9 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoughnutChartComponent implements OnInit {
 
+  @Input() machine;
+  
   constructor() { }
 
-  ngOnInit(): void {
+  efficiencyPercentage;
+  barChartOptions = {
+    scaleShowVerticalLine: true,
+    responsive: true,
+  };
+
+  public doughnutChartLabels = ['OEE', ''];
+  public doughnutChartData = [
+  ];
+  public doughnutChartType = 'doughnut';
+
+  
+  ngOnInit() {
+    this.efficiencyPercentage = this.machine.oee.toFixed(2)*100;
+    console.log(typeof this.machine.oee);
+    this.doughnutChartData = [[this.efficiencyPercentage, 100 - this.efficiencyPercentage]];
   }
 
 }
