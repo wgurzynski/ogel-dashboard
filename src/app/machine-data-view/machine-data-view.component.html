@@ -1,8 +1,8 @@
 <div id="wrapper">
     <h1 *ngIf="contentLoaded">Machines status</h1>
-    <div fxLayout="row" fxLayoutAlign="space-evenly start">
+    <div fxLayout="row wrap" fxLayoutAlign="space-evenly start">
         <mat-spinner *ngIf="!contentLoaded"></mat-spinner>    
-            <app-single-machine class="example-card inline-block" *ngFor="let machine of machinesData"
+            <app-single-machine fxLayout="row" fxLayoutAlign="space-evenly start" class="example-card inline-block" *ngFor="let machine of machinesData"
             [machine]="machine"></app-single-machine>
     </div>
 </div> 

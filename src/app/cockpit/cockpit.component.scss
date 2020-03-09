@@ -19,7 +19,14 @@
   z-index: 1;
 }
 
-#companyLabel {
-  font-size:1.3rem;
-  text-align: center;
+#company-logo{
+  display:table;
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: 600px) {
+    font-size: 0.9em;
+}
+  @media (max-width: 400px) {
+    font-size: 0.8em;
+}
 }

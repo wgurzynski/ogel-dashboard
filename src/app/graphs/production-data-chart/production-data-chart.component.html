@@ -1,5 +1,7 @@
-<div id="wraper" fxLayout="row" fxLayoutAlign="space-evenly start">
+<div id="wraper">
+    <div class="spinner-container"  fxLayout="row wrap" fxLayoutAlign="space-evenly start">
         <mat-spinner *ngIf="!contentLoaded"></mat-spinner>
+    </div>
         <div id="charts" *ngIf="contentLoaded">
             <div style="display: block">
                     <h1> Daily production</h1>
@@ -10,7 +12,7 @@
                 [legend]="barChartLegend"
                 [chartType]="barChartType"></canvas>
                 <h1> Overall Equipment Efficiency</h1>
-                <div fxLayout="row" fxLayoutAlign="space-evenly start">
+                <div fxLayout="row wrap" fxLayoutAlign="space-evenly start">
                     <app-doughnut-chart *ngFor="let machine of machinesData"
                     [machine]="machine"></app-doughnut-chart>
                 </div>
